@@ -13,7 +13,7 @@ Docker
 Clone the repository
 
 ```bash
-  git clone
+  git clone git@github.com:catimbangroy/zapmap-exam.git
 ```
 
 Install the app with your OS based on this tutorial https://laravel.com/docs/10.x/installation#laravel-and-docker

@@ -4,18 +4,17 @@ namespace App\Repository;
 
 use App\Models\Location;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 
 class LocationRepository
 {
     public function __construct(
-        private Location $document,
+        protected Location $location,
     ) {
     }
 
     public function getLocations(array $input): Collection|Location|null
     {
-         return Location::select('id', 'name', 'latitude', 'longitude')
+         return $this->location->select('id', 'name', 'latitude', 'longitude')
             ->selectRaw("
                 (
                     6371 * ACOS(

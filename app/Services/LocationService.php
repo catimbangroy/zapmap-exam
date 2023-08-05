@@ -8,11 +8,9 @@ use Illuminate\Support\Collection;
 
 class LocationService
 {
-    protected LocationRepository $locationRepository;
-
-    public function __construct(LocationRepository $locationRepository)
-    {
-        $this->locationRepository = $locationRepository;
+    public function __construct(
+        protected LocationRepository $locationRepository
+    ) {
     }
 
     public function getLocations(array $input): Collection|Location
